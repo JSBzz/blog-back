@@ -1,0 +1,36 @@
+jwt:
+  expiration_time: 86400000
+  secret: assssssssssdasfjashfasjhfasfjasgfaskfjasfkasfhjqwuiryqwlkrfsssssssssssssssssasdasdasdasdasdasdasxnvbasdkasjd
+
+spring:
+  application:
+    name: blog
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/test
+    username: sa
+    password:
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+      hibernate:
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
