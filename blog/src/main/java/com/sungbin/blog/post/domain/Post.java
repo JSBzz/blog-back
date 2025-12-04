@@ -1,10 +1,7 @@
 package com.sungbin.blog.post.domain;
 
 import com.sungbin.blog.common.CommonDto;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -15,13 +12,24 @@ public class Post extends CommonDto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(columnDefinition = "LONGTEXT")
     private String contents;
     private String title;
 
+
+    @Builder
+    public Post(Long id, String contents, String title){
+        this.id = id;
+        this.contents = contents;
+        this.title = title;
+    }
     @Builder
     public Post(String contents, String title){
         this.contents = contents;
         this.title = title;
     }
+
+
 
 }

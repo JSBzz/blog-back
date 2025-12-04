@@ -2,6 +2,7 @@ package com.sungbin.blog.user.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
 
 @Entity
 @Getter
@@ -14,7 +15,9 @@ public class Users {
     private Long id;
     private String username;
     private String password;
-    private final String role = "USER";
+
+    @ColumnDefault("USER")
+    private String role;
 
     @Builder
     public Users (String username, String password){

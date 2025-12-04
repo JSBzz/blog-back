@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class PostReqDto extends CommonDto {
-    private String id;
+    private Long id;
     private String contents;
     private String title;
 }

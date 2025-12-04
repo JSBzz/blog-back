@@ -30,4 +30,11 @@ public class CommonDto {
 
     @LastModifiedDate
     private String updatedAt;
+
+    @Column(length = 1)
+    private String deleteYn = "N";
+
+    public void updateDeleteFlag(String flag){
+        this.deleteYn = flag;
+    }
 }
