@@ -16,7 +16,7 @@ public class Users {
     private String username;
     private String password;
 
-    @ColumnDefault("USER")
+    @ColumnDefault("'USER'")
     private String role;
 
     @Builder
