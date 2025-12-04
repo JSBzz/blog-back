@@ -53,12 +53,21 @@ public class JwtUtil {
     }
 
     public String generateToken(String username, Optional<SimpleGrantedAuthority> role) {
-        System.out.println(role);
         String authority = role
                 .map(GrantedAuthority::getAuthority)
                 .orElse("USER");
         return Jwts.builder()
                 .claim("role", authority)
+                .setSubject(username)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + expirationTime))
+                .signWith(getSigningKey(), SignatureAlgorithm.HS256)
+                .compact();
+    }
+
+    public String generateToken(String username) {
+        return Jwts.builder()
+                .claim("role", "USER")
                 .setSubject(username)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + expirationTime))

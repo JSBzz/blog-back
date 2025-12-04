@@ -11,4 +11,5 @@ public class AuthReqDto {
 
     @NotBlank(message = "password는 필수값입니다.")
     private String password;
+
 }

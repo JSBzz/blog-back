@@ -2,6 +2,13 @@ jwt:
   expiration_time: 86400000
   secret: assssssssssdasfjashfasjhfasfjasgfaskfjasfkasfhjqwuiryqwlkrfsssssssssssssssssasdasdasdasdasdasdasxnvbasdkasjd
 
+google:
+  client:
+    id: id
+    secret: secret
+  redirect:
+    uri: url
+
 spring:
   sql:
     init:
